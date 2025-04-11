@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise #3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="content">
+      <h1>Earthquake Magnitude Detector Machine</h1>
+      <div class="calculator">
+        <label for="magnitude">Enter Magnitude:</label>
+        <input type="text" id="magnitude" class="form-control">
+        <button onclick="checkMagnitude()">Submit</button>
+        <button onclick="reloadPage()">Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkMagnitude() {
+      const input = document.getElementById('magnitude').value;
+      const magnitude = parseFloat(input);
+
+      if (isNaN(magnitude)) {
+        alert("Please enter a valid number.");
+        return;
+      }
+
+      if (magnitude >= 9.5) {
+        alert("Extremely Deadly")
+      }
+        else if(magnitude >= 9.1) {
+        alert("Apocalyptic");
+      } else if (magnitude >= 8) {
+        alert("Catastrophic");
+      } else if (magnitude >= 7 && magnitude <= 7.9) {
+        alert("Extreme");
+      } else if (magnitude >= 6.1 && magnitude <= 6.9) {
+        alert("Severe");
+      } else if (magnitude >= 5.5 && magnitude <= 6.0) {
+        alert("Moderate");
+      } else if (magnitude >= 2.5 && magnitude <= 5.4) {
+        alert("Light");
+      } else if (magnitude < 2.5) {
+        alert("Micro (usually not felt)");
+      } else {
+        alert("Invalid range.");
+      }
+    }
+
+    function reloadPage() {
+      location.reload();
+    }
+  </script>
+
+
+<video autoplay muted loop id="bg-video">
+  <source src="https://f8n-production-collection-assets.imgix.net/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405/132224/QmRHAbvD961Ja52vwohV8ty8S76VvXVLvW5eKrXs4pFj6Q/nft.gif?fm=mp4" type="video/mp4">
+</video>
+
+<footer class="footer">
+  <p>A.Y. 2024-2025 | David Miguel A. Reyes | ICT Ex#3</p>
+</footer>
+
+
+</body>
+</html>
